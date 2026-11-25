@@ -43,19 +43,16 @@ public class Fraction
         denominator = d;
     }
 
-    // Convert the fraction to a double
     public double toDouble()
     {
         return (double) numerator / denominator;
     }
 
-    // Convert the fraction to a String
     public String toString()
     {
         return numerator + "/" + denominator;
     }
 
-    // Find the greatest common divisor
     private int gcd(int a, int b)
     {
         a = Math.abs(a);
@@ -67,11 +64,9 @@ public class Fraction
             b = a % b;
             a = temp;
         }
-
         return a;
     }
 
-    // Reduce the fraction to lowest terms
     public void reduce()
     {
         int divisor = gcd(numerator, denominator);
@@ -89,29 +84,21 @@ public class Fraction
     // Addition
     public Fraction add(Fraction f)
     {
-        int n = numerator * f.denominator
-                + denominator * f.numerator;
-
-        int d = denominator * f.denominator;
-
-        Fraction result = new Fraction(n, d);
+        int n = numerator * f.denominator + denominator * f.numerator;
+		int d = denominator * f.denominator;
+		Fraction result = new Fraction(n, d);
         result.reduce();
-
         return result;
     }
 
     // Subtraction
     public Fraction subtract(Fraction f)
     {
-        int n = numerator * f.denominator
-                - denominator * f.numerator;
-
-        int d = denominator * f.denominator;
-
-        Fraction result = new Fraction(n, d);
+        int n = numerator * f.denominator - denominator * f.numerator;
+		int d = denominator * f.denominator;
+		Fraction result = new Fraction(n, d);
         result.reduce();
-
-        return result;
+		return result;
     }
 
     // Multiplication
@@ -119,11 +106,9 @@ public class Fraction
     {
         int n = numerator * f.numerator;
         int d = denominator * f.denominator;
-
-        Fraction result = new Fraction(n, d);
+		Fraction result = new Fraction(n, d);
         result.reduce();
-
-        return result;
+		return result;
     }
 
     // Division
@@ -131,17 +116,13 @@ public class Fraction
     {
         int n = numerator * f.denominator;
         int d = denominator * f.numerator;
-
-        Fraction result = new Fraction(n, d);
+		Fraction result = new Fraction(n, d);
         result.reduce();
-
-        return result;
+		return result;
     }
 
-    // Compare the numerators and denominators 
     public boolean equals(Fraction f)
     {
-        return numerator == f.numerator
-                && denominator == f.denominator;
+        return numerator == f.numerator && denominator == f.denominator;
     }
 }
