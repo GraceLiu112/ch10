@@ -5,27 +5,18 @@ public class FractionQuiz
     public static void main(String[] args)
     {
         Scanner in = new Scanner(System.in);
-
-        int correct = 0;
+		int correct = 0;
         int total = 0;
-
-        String input = "";
-
-        System.out.println("Let the Fraction Quiz Begin. "
-                + "Answers should be in lowest terms. Good luck!");
-
-        System.out.println();
-
+		String input = "";
+		System.out.println("Let the Fraction Quiz Begin. Answers should be in lowest terms. Good luck!");
+		System.out.println();
         while (!input.equals("quit"))
         {
             Fraction f1 = new Fraction();
             Fraction f2 = new Fraction();
-
             int random = (int)(Math.random() * 4);
-
             String operator;
             Fraction answer;
-
             if (random == 0)
             {
                 operator = "+";
@@ -47,18 +38,14 @@ public class FractionQuiz
                 answer = f1.divide(f2);
             }
 
-            System.out.print(f1 + " " + operator
-                    + " " + f2 + " = ");
-
+            System.out.print(f1 + " " + operator + " " + f2 + " = ");
             input = in.nextLine();
-
             if (input.equals("quit"))
             {
                 break;
             }
 
             Fraction userAnswer = new Fraction(input);
-
             total++;
 
             if (userAnswer.equals(answer))
